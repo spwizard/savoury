@@ -1,0 +1,31 @@
+<h1 class="ViewHeader ViewHeader--location">
+  <a class="ViewHeader-link" href="/">
+    {{vm.location.name}}
+  </a>
+</h1>
+
+<h2 class="ViewHeader">
+  <a class="ViewHeader-link" href="/location/{{vm.location.outcode}}/categories/?in={{vm.location.incode}}">
+    What do you fancy?
+  </a>
+</h2>
+
+<ol class="CategoryList">
+  <li ng-repeat="category in vm.categories" class="CategoryList-item is-without-image">
+    <a href="/location/{{vm.location.outcode}}/categories/{{category.slug}}/?in={{vm.location.incode}}" class="CategoryList-link">
+      <div class="CategoryList-header">
+        {{category.name}}
+        <span class="CategoryList-count">{{category.count}}</span>
+      </div>
+      <div is-image img="/shared/assets/images/category-{{category.slug}}.jpg" klass="CategoryList-image"></div>
+    </a>
+  </li>
+  <li class="CategoryList-item is-without-image">
+    <a href="/location/{{vm.location.outcode}}/categories/all/?in={{vm.location.incode}}" class="CategoryList-link">
+      <div class="CategoryList-header">
+        All
+        <span class="CategoryList-count">{{vm.restaurants.length}}</span>
+      </div>
+    </a>
+  </li>
+</ol>

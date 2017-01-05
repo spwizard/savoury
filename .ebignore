@@ -1,0 +1,38 @@
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+/node_modules/
+
+# OS or Editor folders
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Built files
+#umami.js
+#umami.js.map
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# Dev files
+.git
+.gitignore
+.nvmrc
+Gruntfile.js
+index-dev.js
+npm-debug.log
+README.md

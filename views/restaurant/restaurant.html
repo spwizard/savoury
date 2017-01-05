@@ -1,0 +1,57 @@
+<h1 class="ViewHeader ViewHeader--location">
+  <a class="ViewHeader-link" href="/">
+    {{vm.location.name}}
+  </a>
+</h1>
+
+<h1 class="ViewHeader ViewHeader--category">
+  <a class="ViewHeader-link" href="/location/{{vm.location.outcode}}/categories/?in={{vm.location.incode}}">
+    {{vm.category.name}}
+  </a>
+</h1>
+
+<h1 class="ViewHeader ViewHeader--restaurant">
+  <a class="ViewHeader-link" href="/location/{{vm.location.outcode}}/categories/{{vm.category.slug}}/?in={{vm.location.incode}}">
+    {{vm.restaurant.name}}
+  </a>
+</h1>
+
+<div class="RestaurantProviders">
+  <div class="RestaurantProviders-categories">
+    <span ng-repeat="cuisine in vm.restaurant.cuisines | orderBy:['priority', 'name']">
+      {{cuisine.name}}{{!$last ? ', ' : ''}}
+    </span>
+  </div>
+  <ul class="RestaurantProviders-list">
+    <li ng-repeat="provider in vm.restaurant.providers | orderBy:'slug' | filter:{ slug: '!factual'}" class="RestaurantProviders-item">
+      <a href="{{provider.url}}" class="RestaurantProviders-link" target="_blank">
+        <div class="RestaurantProviders-image">
+          <img src="/shared/assets/images/logo-{{provider.slug}}.png" alt="{{provider.type}}" width="100">
+        </div>
+        <div class="RestaurantProviders-body">
+          <span class="RestaurantProviders-label">Estimated delivery time</span><br>{{provider.estimated_delivery_time}}
+        </div>
+      </a>
+    </li>
+    <li ng-if="vm.restaurant.factual.tel" class="RestaurantProviders-item">
+      <a href="tel:{{vm.restaurant.factual.tel | SlugifyFilter}}" class="RestaurantProviders-link">
+        <!--<div class="RestaurantProviders-image">
+          <img src="/shared/assets/images/logo-tel.png" alt="Phone" width="100">
+        </div>-->
+        <div class="RestaurantProviders-body" class="RestaurantProviders-link">
+          {{vm.restaurant.factual.tel}}
+        </div>
+      </a>
+    </li>
+    <li ng-if="vm.restaurant.factual.website" class="RestaurantProviders-item">
+      <a href="{{vm.restaurant.factual.website}}" class="RestaurantProviders-link" target="_blank">
+        <!--<div class="RestaurantProviders-image">
+          <img src="/shared/assets/images/logo-tel.png" alt="Phone" width="100">
+        </div>-->
+        <div class="RestaurantProviders-body" class="RestaurantProviders-link">
+          {{vm.restaurant.factual.website | FriendlyUrlFilter}}
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,32 @@
+.Main {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+ * Animation
+ */
+
+.Main.ng-enter,
+.Main.ng-leave {
+  position: absolute;
+}
+
+.Main.ng-enter {
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.Main.ng-enter-active {
+  opacity: 1;
+}
+
+.Main.ng-leave {
+  opacity: 1;
+  tranasition: opacity 0.125s
+}
+
+.Main.ng-leave-active {
+  opacity: 0;
+}

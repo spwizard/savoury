@@ -1,0 +1,44 @@
+.CategoryList {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.CategoryList-item {
+  float: left;
+  width: 48.75%;
+  margin-bottom: 8px;
+  max-height: 156px;
+  overflow: hidden;
+}
+
+// TO DO break images
+.CategoryList-item.is-without-image ~ .CategoryList-item img {
+  display: none;
+}
+
+.CategoryList-item:nth-child(odd) {
+  margin-right: 2.5%;
+}
+
+.CategoryList-header {
+  position: relative;
+  z-index: 1;
+  padding: 9px 8px 7px 16px;
+  background: rgba(118, 90, 95, 0.8);
+}
+
+.CategoryList-link {
+  display: block;
+}
+
+.CategoryList-count {
+  color: tea;
+}
+
+.CategoryList-image {
+  position: relative;
+  top: -57px;
+  width: 100%;
+  max-width: 312px;
+  margin: 0 auto;
+}

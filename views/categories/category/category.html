@@ -1,0 +1,25 @@
+<h1 class="ViewHeader ViewHeader--location">
+  <a class="ViewHeader-link" href="/">
+    {{vm.location.name}}
+  </a>
+</h1>
+
+<h2 class="ViewHeader ViewHeader--category">
+  <a class="ViewHeader-link" href="/location/{{vm.location.outcode}}/categories/?in={{vm.location.incode}}">
+    {{vm.category.name}}
+  </a>
+</h2>
+
+<ol class="RestaurantList">
+  <li ng-repeat="restaurant in vm.restaurants | orderBy:restaurantsOrder()" class="RestaurantList-item">
+    <a class="RestaurantList-link" ui-sref="umami.location.restaurant({restaurant: restaurant.slug, category: vm.category.slug})">
+      {{restaurant.name}}<br>
+      <span ng-repeat="cuisine in restaurant.cuisines | orderBy:['priority', 'name']" class="RestaurantList-categories">
+        {{cuisine.name}}{{!$last ? ', ' : ''}}
+      </span><br>
+      <span ng-repeat="provider in restaurant.providers | UniqueFilter:'type' | orderBy:'type'" class="RestaurantList-providers">
+        {{provider.type}}{{!$last ? ', ' : ''}}
+      </span>
+    </a>
+  </li>
+</ol>

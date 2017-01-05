@@ -1,0 +1,32 @@
+.Or {
+  position: relative;
+  text-align: center;
+  padding: 5px 0;
+  overflow: hidden;
+}
+
+@media (min-width: 641px) {
+  .Or {
+    padding: 10px 0;
+  }
+}
+
+.Or:before {
+  content: '';
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  width: 50%;
+  left: 0;
+  top: 50%;
+  margin-left: -0.75em;
+}
+
+.Or:after {
+  content: '';
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  width: 50%;
+  right: 0;
+  top: 50%;
+  margin-right: -0.75em;
+}

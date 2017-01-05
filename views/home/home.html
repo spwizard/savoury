@@ -1,0 +1,26 @@
+<div class="Home">
+
+  <h1>うまみ&nbsp; u m a m i</h1>
+
+  <form novalidate class="PostcodeSearch" name="PostcodeSearchForm" ng-submit="searchPostcode($event)">
+    <label class="PostcodeSearch-label" for="postcode">F i n d&nbsp; y o u r&nbsp; t a k e a w a y</label>
+    <div class="PostcodeSearch-form">
+      <input class="PostcodeSearch-input" name="postcode" id="postcode" type="text" placeholder="E n t e r  p o s t c o d e" required ng-model="postcode" ng-pattern="/^[a-z]{1,2}[0-9][a-z0-9]?\s?[0-9][a-z]{2}$/i">
+      <button class="PostcodeSearch-button">
+        <svg class="Icon Icon--reversed">
+          <use xlink:href="/shared/assets/defs.svg#chevron-right"></use>
+        </svg>
+      </button>
+    </div>
+  </form>
+
+  <div class="Or">o r</div>
+
+  <button geolocate class="Geolocate">
+    <svg class="Geolocate-icon">
+      <use xlink:href="/shared/assets/defs.svg#map-marker"></use>
+    </svg>
+    <span class="Geolocate-text">L o c a t e&nbsp; m e</span>
+  </button>
+
+</div>
